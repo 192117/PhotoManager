@@ -2,7 +2,8 @@ from datetime import datetime
 
 from django.urls import path, register_converter
 
-from .views import DetailPhotoView, ListPhotoView, SavePhotoView
+from .views import (DetailPhotoView, ListPhotoView, RegisterUserView,
+                    SavePhotoView, search_name)
 
 
 class DateConverter:
@@ -25,4 +26,6 @@ urlpatterns = [
     path('show/<yyyy:date>/', ListPhotoView.as_view()),
     path('show/<str:people>/', ListPhotoView.as_view()),
     path('show/<str:latitude>/<str:longitude>/', ListPhotoView.as_view()),
+    path('search_name/', search_name),
+    path('register/', RegisterUserView.as_view()),
 ]

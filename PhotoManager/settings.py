@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'drf_yasg',
 ]
 
 MY_APPS = [
@@ -96,11 +95,11 @@ REST_FRAMEWORK = {
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('ENGINE_POST_DB'),
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get('POSTGRES_DB'),
         'USER': os.environ.get('POSTGRES_USER'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST', '127.0.0.1'),
+        'HOST': os.environ.get('POSTGRES_HOST', '127.0.0.1'),
         'PORT': os.environ.get('POSTGRES_PORT', 5432),
     }
 }

@@ -11,7 +11,6 @@ django = "^4.1.4"
 psycopg2-binary = "^2.9.5"
 python-dotenv = "^0.21.0"
 djangorestframework = "^3.14.0"
-drf-yasg = "^1.21.4"
 pillow = "^9.3.0"
 
 
