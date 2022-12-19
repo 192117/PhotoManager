@@ -12,6 +12,7 @@ psycopg2-binary = "^2.9.5"
 python-dotenv = "^0.21.0"
 djangorestframework = "^3.14.0"
 pillow = "^9.3.0"
+drf-spectacular = "^0.25.1"
 
 
 [tool.poetry.group.dev.dependencies]
