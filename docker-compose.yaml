@@ -6,23 +6,37 @@ services:
       context: .
       dockerfile: Dockerfile
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     ports:
-      - '8000:8000'
+      - '8001:8000'
     command: >
-      bash -c " python manage.py makemigrations
+      bash -c "python manage.py makemigrations
       && python manage.py migrate
-      && python manage.py runserver 0.0.0.0:8000"
+      && python manage.py collectstatic --noinput
+      && gunicorn PhotoManager.wsgi -b :8000"
+    volumes:
+      - static_value_photo:/code/static/
+      - media_value_photo:/code/media/
+      - .env.docker:/code/.env
   db:
     restart: always
-    image: postgres
+    image: postgres:15.0-alpine
     container_name: photo_db
     env_file:
-      - .env
+      - .env.docker
     expose:
       - '5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U mail_app" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
 
 volumes:
   postgres_data:
+  media_value_photo:
+  static_value_photo:
