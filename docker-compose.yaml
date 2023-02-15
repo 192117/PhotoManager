@@ -1,24 +1,6 @@
 version: '3.9'
 
 services:
-  web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    depends_on:
-      db:
-        condition: service_healthy
-    ports:
-      - '8001:8000'
-    command: >
-      bash -c "python manage.py makemigrations
-      && python manage.py migrate
-      && python manage.py collectstatic --noinput
-      && gunicorn PhotoManager.wsgi -b :8000"
-    volumes:
-      - static_value_photo:/code/static/
-      - media_value_photo:/code/media/
-      - .env.docker:/code/.env
   db:
     restart: always
     image: postgres:15.0-alpine
@@ -34,9 +16,37 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    expose:
+      - '8000'
+    volumes:
+      - static_photo:/code/staticfiles
+      - media_photo:/code/mediafiles
+      - .env.docker:/code/.env
+    command: >
+      bash -c "python manage.py makemigrations
+      && python manage.py migrate
+      && python manage.py collectstatic --noinput
+      && gunicorn PhotoManager.wsgi:application -b :8001"
+  nginx:
+    image: nginx:latest
+    container_name: 'nginx_photo'
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - static_photo:/var/html/staticfiles
+      - media_photo:/var/html/mediafiles
+    depends_on:
+      - web
+    ports:
+      - '80:80'
 
 volumes:
   postgres_data:
-  media_value_photo:
-  static_value_photo:
+  media_photo:
+  static_photo:

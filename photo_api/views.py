@@ -31,7 +31,7 @@ class ListPhotoView(generics.ListAPIView):
             queryset = Photo.objects.filter(people__contains=kwargs['people'])
         else:
             queryset = Photo.objects.all()
-        serializer = ListPhotoSerializer(queryset, many=True)
+        serializer = ListPhotoSerializer(queryset, many=True, context={'request': request})
         return response.Response(serializer.data)
 
 
