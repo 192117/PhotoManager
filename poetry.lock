@@ -72,7 +72,7 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "django"
-version = "4.1.6"
+version = "4.1.7"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
 category = "main"
 optional = false
@@ -89,7 +89,7 @@ bcrypt = ["bcrypt"]
 
 [[package]]
 name = "django-cors-headers"
-version = "3.13.0"
+version = "3.14.0"
 description = "django-cors-headers is a Django application for handling the server headers required for Cross-Origin Resource Sharing (CORS)."
 category = "main"
 optional = false
@@ -194,7 +194,7 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "ipython"
-version = "8.10.0"
+version = "8.11.0"
 description = "IPython: Productive Interactive Computing"
 category = "dev"
 optional = false
@@ -209,7 +209,7 @@ jedi = ">=0.16"
 matplotlib-inline = "*"
 pexpect = {version = ">4.3", markers = "sys_platform != \"win32\""}
 pickleshare = "*"
-prompt-toolkit = ">=3.0.30,<3.1.0"
+prompt-toolkit = ">=3.0.30,<3.0.37 || >3.0.37,<3.1.0"
 pygments = ">=2.4.0"
 stack-data = "*"
 traitlets = ">=5"
@@ -337,11 +337,11 @@ tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "pa
 
 [[package]]
 name = "prompt-toolkit"
-version = "3.0.36"
+version = "3.0.38"
 description = "Library for building powerful interactive command lines in Python"
 category = "dev"
 optional = false
-python-versions = ">=3.6.2"
+python-versions = ">=3.7.0"
 
 [package.dependencies]
 wcwidth = "*"
@@ -426,7 +426,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "setuptools"
-version = "67.2.0"
+version = "67.6.0"
 description = "Easily download, build, install, upgrade, and uninstall Python packages"
 category = "main"
 optional = false
@@ -507,7 +507,7 @@ python-versions = "*"
 
 [[package]]
 name = "whitenoise"
-version = "6.3.0"
+version = "6.4.0"
 description = "Radically simplified static file serving for WSGI applications"
 category = "main"
 optional = false
@@ -551,12 +551,12 @@ decorator = [
     {file = "decorator-5.1.1.tar.gz", hash = "sha256:637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"},
 ]
 django = [
-    {file = "Django-4.1.6-py3-none-any.whl", hash = "sha256:c6fe7ebe7c017fe59f1029821dae0acb5a2ddcd6c9a0138fd20a8bfefac914bc"},
-    {file = "Django-4.1.6.tar.gz", hash = "sha256:bceb0fe1a386781af0788cae4108622756cd05e7775448deec04a71ddf87685d"},
+    {file = "Django-4.1.7-py3-none-any.whl", hash = "sha256:f2f431e75adc40039ace496ad3b9f17227022e8b11566f4b363da44c7e44761e"},
+    {file = "Django-4.1.7.tar.gz", hash = "sha256:44f714b81c5f190d9d2ddad01a532fe502fa01c4cb8faf1d081f4264ed15dcd8"},
 ]
 django-cors-headers = [
-    {file = "django-cors-headers-3.13.0.tar.gz", hash = "sha256:f9dc6b4e3f611c3199700b3e5f3398c28757dcd559c2f82932687f3d0443cfdf"},
-    {file = "django_cors_headers-3.13.0-py3-none-any.whl", hash = "sha256:37e42883b5f1f2295df6b4bba96eb2417a14a03270cb24b2a07f021cd4487cf4"},
+    {file = "django_cors_headers-3.14.0-py3-none-any.whl", hash = "sha256:684180013cc7277bdd8702b80a3c5a4b3fcae4abb2bf134dceb9f5dfe300228e"},
+    {file = "django_cors_headers-3.14.0.tar.gz", hash = "sha256:5fbd58a6fb4119d975754b2bc090f35ec160a8373f276612c675b00e8a138739"},
 ]
 django-environ = [
     {file = "django-environ-0.9.0.tar.gz", hash = "sha256:bff5381533056328c9ac02f71790bd5bf1cea81b1beeb648f28b81c9e83e0a21"},
@@ -587,8 +587,8 @@ inflection = [
     {file = "inflection-0.5.1.tar.gz", hash = "sha256:1a29730d366e996aaacffb2f1f1cb9593dc38e2ddd30c91250c6dde09ea9b417"},
 ]
 ipython = [
-    {file = "ipython-8.10.0-py3-none-any.whl", hash = "sha256:b38c31e8fc7eff642fc7c597061fff462537cf2314e3225a19c906b7b0d8a345"},
-    {file = "ipython-8.10.0.tar.gz", hash = "sha256:b13a1d6c1f5818bd388db53b7107d17454129a70de2b87481d555daede5eb49e"},
+    {file = "ipython-8.11.0-py3-none-any.whl", hash = "sha256:5b54478e459155a326bf5f42ee4f29df76258c0279c36f21d71ddb560f88b156"},
+    {file = "ipython-8.11.0.tar.gz", hash = "sha256:735cede4099dbc903ee540307b9171fbfef4aa75cfcacc5a273b2cda2f02be04"},
 ]
 isort = [
     {file = "isort-5.12.0-py3-none-any.whl", hash = "sha256:f84c2818376e66cf843d497486ea8fed8700b340f308f076c6fb1229dff318b6"},
@@ -695,8 +695,8 @@ pillow = [
     {file = "Pillow-9.4.0.tar.gz", hash = "sha256:a1c2d7780448eb93fbcc3789bf3916aa5720d942e37945f4056680317f1cd23e"},
 ]
 prompt-toolkit = [
-    {file = "prompt_toolkit-3.0.36-py3-none-any.whl", hash = "sha256:aa64ad242a462c5ff0363a7b9cfe696c20d55d9fc60c11fd8e632d064804d305"},
-    {file = "prompt_toolkit-3.0.36.tar.gz", hash = "sha256:3e163f254bef5a03b146397d7c1963bd3e2812f0964bb9a24e6ec761fd28db63"},
+    {file = "prompt_toolkit-3.0.38-py3-none-any.whl", hash = "sha256:45ea77a2f7c60418850331366c81cf6b5b9cf4c7fd34616f733c5427e6abbb1f"},
+    {file = "prompt_toolkit-3.0.38.tar.gz", hash = "sha256:23ac5d50538a9a38c8bde05fecb47d0b403ecd0662857a86f886f798563d5b9b"},
 ]
 psycopg2-binary = [
     {file = "psycopg2-binary-2.9.5.tar.gz", hash = "sha256:33e632d0885b95a8b97165899006c40e9ecdc634a529dca7b991eb7de4ece41c"},
@@ -867,8 +867,8 @@ pyyaml = [
     {file = "PyYAML-6.0.tar.gz", hash = "sha256:68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"},
 ]
 setuptools = [
-    {file = "setuptools-67.2.0-py3-none-any.whl", hash = "sha256:16ccf598aab3b506593c17378473978908a2734d7336755a8769b480906bec1c"},
-    {file = "setuptools-67.2.0.tar.gz", hash = "sha256:b440ee5f7e607bb8c9de15259dba2583dd41a38879a7abc1d43a71c59524da48"},
+    {file = "setuptools-67.6.0-py3-none-any.whl", hash = "sha256:b78aaa36f6b90a074c1fa651168723acbf45d14cb1196b6f02c0fd07f17623b2"},
+    {file = "setuptools-67.6.0.tar.gz", hash = "sha256:2ee892cd5f29f3373097f5a814697e397cf3ce313616df0af11231e2ad118077"},
 ]
 six = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
@@ -898,6 +898,6 @@ wcwidth = [
     {file = "wcwidth-0.2.6.tar.gz", hash = "sha256:a5220780a404dbe3353789870978e472cfe477761f06ee55077256e509b156d0"},
 ]
 whitenoise = [
-    {file = "whitenoise-6.3.0-py3-none-any.whl", hash = "sha256:cf8ecf56d86ba1c734fdb5ef6127312e39e92ad5947fef9033dc9e43ba2777d9"},
-    {file = "whitenoise-6.3.0.tar.gz", hash = "sha256:fe0af31504ab08faa1ec7fc02845432096e40cc1b27e6a7747263d7b30fb51fa"},
+    {file = "whitenoise-6.4.0-py3-none-any.whl", hash = "sha256:599dc6ca57e48929dfeffb2e8e187879bfe2aed0d49ca419577005b7f2cc930b"},
+    {file = "whitenoise-6.4.0.tar.gz", hash = "sha256:a02d6660ad161ff17e3042653c8e3f5ecbb2a2481a006bde125b9efb9a30113a"},
 ]
